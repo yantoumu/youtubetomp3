@@ -118,8 +118,8 @@ const Home = () => {
                             className={`${showDownloadButton ? '' : 'hidden '}flex justify-center items-center w-40 px-4 py-2 bg-zinc-800 text-white rounded-md hover:bg-zinc-900 transition`}
                         >
                             Download
-                            <CircularProgress sx={{ color: 'white', ml: 1 }} size={20} thickness={5}
-                                className={`${waitingDownload ? '' : 'hidden '}`} />
+                            {waitingDownload && <CircularProgress sx={{ color: 'white', ml: 1 }} size={20} thickness={5} />}
+
                         </button>
                         {showDownloadTip && <div>
                             <span className="text-sm text-green-600">
