@@ -109,7 +109,7 @@ const Home = () => {
                         >
                             Convert
                             <CircularProgress sx={{ color: 'white', ml: 1 }} size={20} thickness={5}
-                                className={`${fetchingDownloadUrl ? '' : 'hidden '}`} />
+                                className={`${fetchingDownloadUrl ? '' : 'hidden'}`} />
                         </button>
                     </div>
                     <div className="flex justify-center items-center space-x-2">
