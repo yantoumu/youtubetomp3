@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Image from 'next/image';
 
-//const yt2mp3Url = 'http://localhost:3001/api/yt2mp3';
-const yt2mp3Url = 'http://api.ezymp3.cc/api/yt2mp3';
+const yt2mp3Url = 'http://localhost:3001/api/yt2mp3';
+//const yt2mp3Url = 'https://api.ezymp3.cc/api/yt2mp3';
 
 const Home = () => {
     const [videoURL, setVideoURL] = useState('');
@@ -108,8 +108,8 @@ const Home = () => {
                             disabled={fetchingDownloadUrl}
                         >
                             Convert
-                            <CircularProgress sx={{ color: 'white', ml: 1 }} size={20} thickness={5}
-                                className={`${fetchingDownloadUrl ? '' : 'hidden'}`} />
+                            {fetchingDownloadUrl && <CircularProgress sx={{ color: 'white', ml: 1 }} size={20} thickness={5} />}
+
                         </button>
                     </div>
                     <div className="flex justify-center items-center space-x-2">
