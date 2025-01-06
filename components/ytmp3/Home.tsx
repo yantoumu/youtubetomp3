@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Image from 'next/image';
 
-const yt2mp3Url = 'http://localhost:3001/api/yt2mp3';
-//const yt2mp3Url = 'https://api.ezymp3.cc/api/yt2mp3';
+//const yt2mp3Url = 'http://localhost:3001/api/yt2mp3';
+const yt2mp3Url = 'https://api.ezymp3.cc/api/yt2mp3';
 
 const Home = () => {
     const [videoURL, setVideoURL] = useState('');
@@ -79,7 +79,7 @@ const Home = () => {
         <div className="min-h-screen flex flex-col items-center justify-center">
             <div className="w-full bg-zinc-900 text-white py-6 text-center flex justify-center items-center">
                 <Image src='/favicon-dark.png' width={40} height={40} alt='Y2MP3 - YouTube to MP3 Converter' />
-                &nbsp;EzyMP3 is a Free, Safe, and Fast YouTube to MP3 Converter.
+                &nbsp;EzyMP3 is a Free, Safe, and Ad-Free YouTube to MP3 Converter.
             </div>
             {/* Header */}
             <header className=" w-full py-8 text-center">
