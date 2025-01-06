@@ -13,18 +13,18 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
     <Head>
       <meta name="saashub-verification" content="zm6rcf35ll2n" />
     </Head>
-    {/* Google Tag Manager */}
-    <Script
-      src="https://www.googletagmanager.com/gtag/js?id=G-3VWXBTY79Z"
-      strategy="afterInteractive"
-    />
+
+     {/* Google tag (gtag.js)  */}
+    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-54K88LRQBS"
+      strategy='afterInteractive'></Script>
     <Script>
       {`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-3VWXBTY79Z');
-    `}
+
+        gtag('config', 'G-54K88LRQBS');
+      `}
     </Script>
 
     <Component {...pageProps} />
