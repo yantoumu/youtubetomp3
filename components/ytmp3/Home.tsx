@@ -3,7 +3,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Image from 'next/image';
 
 //const yt2mp3Url = 'http://localhost:3001/api/yt2mp3';
-const yt2mp3Url = 'https://api.ezymp3.cc/api/yt2mp3';
+//const yt2mp3Url = 'https://api.ezymp3.cc/api/yt2mp3';
+const yt2mp3Url = 'https://youtubetomp3-backend.vercel.app/api/yt2mp3';
 
 const Home = () => {
     const [videoURL, setVideoURL] = useState('');
