@@ -83,14 +83,14 @@ const Home = () => {
                     <Image src='/favicon-dark.png' width={40} height={40} alt='Y2MP3 - YouTube to MP3 Converter' />
                     &nbsp;EzyMP3 is a Free, Safe, and Ad-Free YouTube to MP3 Converter.
                 </div>
-                <div className='flex justify-center items-center space-x-2 mb-4'>
+                {/* <div className='flex justify-center items-center space-x-2 mb-4'>
                     Join our
                     <a className='bg-red-400 text-white rounded-md px-2 py-1 mx-2 text-lg underline hover:bg-red-500 transition'
                         href="https://www.reddit.com/r/ezymp3_convert/" target='_blank'>
                         subreddit
                     </a>
                     for more discussion.
-                </div>
+                </div> */}
             </div>
 
             {/* Header */}
