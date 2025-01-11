@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
     </Head>
 
      {/* Google tag (gtag.js)  */}
-    {/* <Script async src="https://www.googletagmanager.com/gtag/js?id=G-54K88LRQBS"
+    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-54K88LRQBS"
       strategy='afterInteractive'></Script>
     <Script>
       {`
@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
 
         gtag('config', 'G-54K88LRQBS');
       `}
-    </Script> */}
+    </Script>
 
     <Component {...pageProps} />
   </>)
