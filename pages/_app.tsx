@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
       <meta name="saashub-verification" content="zm6rcf35ll2n" />
     </Head>
 
-     {/* Google tag (gtag.js)  */}
+    {/* Google tag (gtag.js)  */}
     <Script async src="https://www.googletagmanager.com/gtag/js?id=G-54K88LRQBS"
       strategy='afterInteractive'></Script>
     <Script>

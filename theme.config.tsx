@@ -192,18 +192,12 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: 'https://github.com/happydrew/youtubetomp3/tree/main/docs',
   logo,
   head: function useHead() {
-    const config = useConfig()
-    const { route } = useRouter()
-    const isDefault = route === '/' || !config.title
-    // TODO: change og:image
-    const image =
-      'https://nextra.site/' +
-      (isDefault ? 'og.jpeg' : `/og?title=${config.title}`)
+    const { frontMatter, title: pageTitle } = useConfig()
+    const { asPath } = useRouter()
+    const path = asPath.indexOf("?") > 0 ? asPath.substring(0, asPath.indexOf("?")) : asPath
 
-    const description =
-      config.frontMatter.description ||
-      'Make beautiful websites with Next.js & MDX.'
-    const title = config.title + (route === '/' ? '' : ' - Nextra')
+    const title = `${pageTitle}${path === "/" ? "" : " | EzyMP3-YouTube to MP3 Converter"}`
+    const { description, canonical, image } = frontMatter
 
     return (
       <>
@@ -211,14 +205,15 @@ const config: DocsThemeConfig = {
         <meta property="og:title" content={title} />
         <meta name="description" content={description} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
+        <meta property="og:image" content={image || '/og-image.png'} />
+        {canonical && <link rel="canonical" href={canonical} />}
 
         <meta name="msapplication-TileColor" content="#fff" />
         <meta httpEquiv="Content-Language" content="en" />
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site:domain" content="nextra.site" />
-        <meta name="twitter:url" content="https://nextra.site" />
-        <meta name="apple-mobile-web-app-title" content="Nextra" />
+        <meta name="twitter:url" content="https://nextra.site" /> */}
+        <meta name="apple-mobile-web-app-title" content="EzyMP3" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link
