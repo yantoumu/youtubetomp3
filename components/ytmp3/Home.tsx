@@ -2,17 +2,14 @@ import React, { useState, useEffect } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Image from 'next/image';
 
-//const yt2mp3Url = 'http://localhost:3001/api/yt2mp3';
+const yt2mp3Url = 'http://localhost:3001/api/yt2mp3';
 //const yt2mp3Url = 'https://api.ezymp3.cc/api/yt2mp3';
-const yt2mp3Url = 'https://youtubetomp3-backend.vercel.app/api/yt2mp3';
+//const yt2mp3Url = 'https://youtubetomp3-backend.vercel.app/api/yt2mp3';
 
 const Home = () => {
     const [videoURL, setVideoURL] = useState('');
     const [fetchingDownloadUrl, setFetchingDownloadUrl] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
-    const [downloadingMP3, setDownloadingMP3] = useState(false);
-    const [curDownloadBlob, setCurDownloadBlob] = useState(null);
-    const [curDownloadFileName, setCurDownloadFileName] = useState('');
     const [showDownloadButton, setShowDownloadButton] = useState(false);
     const [showDownloadTip, setShowDownloadTip] = useState(false);
     const [downloadUrl, setDownloadUrl] = useState('');

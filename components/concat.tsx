@@ -89,8 +89,17 @@ export const Concat = () => {
                         <p className="text-sm opacity-70 mb-8">Any questions, feedback, or need support? Feel free to reach out, and we'll get back to you as soon as possible.</p>
                         <ul className="text-sm grid grid-cols-2 sm:grid-cols-1 gap-4">
                             <li>
-                                <h4 className="font-medium text-teal-50">Email us</h4>
+                                <h4 className="font-medium text-teal-50">Email us :</h4>
                                 <p>drewgrant616@gmail.com</p>
+                            </li>
+                            <li>
+                                <h4 className="font-medium text-teal-50">Join our community :</h4>
+                                <p>
+                                    <a className='text-white underline'
+                                        href="https://ezymp3ccyoutubetomp3.quora.com/?invite_code=wJ55ugDw4sbNAOAAmIRs" target='_blank'>
+                                        Quaro Space
+                                    </a>
+                                </p>
                             </li>
                         </ul>
                     </div>

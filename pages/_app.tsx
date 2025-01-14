@@ -16,7 +16,8 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
 
     {/* Google tag (gtag.js)  */}
     <Script async src="https://www.googletagmanager.com/gtag/js?id=G-54K88LRQBS"
-      strategy='afterInteractive'></Script>
+      strategy='afterInteractive'>
+    </Script>
     <Script>
       {`
         window.dataLayer = window.dataLayer || [];
