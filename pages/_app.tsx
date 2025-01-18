@@ -12,6 +12,8 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
   return (<>
     <Head>
       <meta name="saashub-verification" content="zm6rcf35ll2n" />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4907197973761221"
+        crossOrigin="anonymous"></script>
     </Head>
 
     {/* Google tag (gtag.js)  */}
