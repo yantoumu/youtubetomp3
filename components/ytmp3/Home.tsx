@@ -78,15 +78,17 @@ const Home = () => {
             <div className='w-full bg-zinc-900 text-white '>
                 <div className="pt-6 text-center flex justify-center items-center">
                     <Image src='/favicon-dark.png' width={40} height={40} alt='Y2MP3 - YouTube to MP3 Converter' />
-                    &nbsp;EzyMP3 is a Free, Safe, and Ad-Free YouTube to MP3 Converter.
+                    &nbsp;EzyMP3 is a Free, Safe, Easy-to-use YouTube to MP3 Converter.
                 </div>
-                <div className='flex justify-center items-center space-x-2 mb-4'>
-                    Join our
+                <div className='flex justify-center items-center space-x-2 mb-2'>
+                    Any questions or feedback? 👉
                     <a className='bg-red-400 text-white rounded-md px-2 py-1 mx-2 text-lg underline hover:bg-red-500 transition'
                         href="https://ezymp3ccyoutubetomp3.quora.com/?invite_code=wJ55ugDw4sbNAOAAmIRs" target='_blank'>
                         Quaro Space
                     </a>
-                    for more discussion.
+                </div>
+                <div className="text-green-400 text-center flex justify-center items-center mb-4">
+                    Ads keep our site free and functional 😊. Sorry for any inconvenience and thanks for your support! ❤️
                 </div>
             </div>
 
