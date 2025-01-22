@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
     </Head>
 
     {/* monetag ads */}
-    <script src="https://alwingulla.com/88/tag.min.js" data-zone="126979" async data-cfasync="false"></script>
+    {/* <script src="https://alwingulla.com/88/tag.min.js" data-zone="126979" async data-cfasync="false"></script> */}
 
     {/* Google tag (gtag.js)  */}
     <Script async src="https://www.googletagmanager.com/gtag/js?id=G-54K88LRQBS"
