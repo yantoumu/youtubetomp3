@@ -87,7 +87,7 @@ const Home = () => {
                         Quaro Space
                     </a>
                 </div>
-                <div className="text-green-400 text-center flex justify-center items-center mb-4">
+                <div className="text-center flex justify-center items-center text-orange-300 mb-4">
                     Ads keep our site free and functional 😊. Sorry for any inconvenience and thanks for your support! ❤️
                 </div>
             </div>
