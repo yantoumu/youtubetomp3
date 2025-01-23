@@ -36,11 +36,11 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
 
 
     {/* monetag ads - In-Page Push 8833149 */}
-    <Script>
+    {/* <Script>
       {`
       (function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',8833149,document.createElement('script'))
       `}
-    </Script>
+    </Script> */}
 
     {/* monetag ads - Native Banner (Interstitial) 8833215 */}
     <Script>
