@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Image from 'next/image';
+import { yt2mp3Url } from '../../ezymp3.config';
 
-//const yt2mp3Url = 'http://localhost:3001/api/yt2mp3';
-const yt2mp3Url = 'https://api.ezymp3.cc/api/yt2mp3';
-//const yt2mp3Url = 'https://youtubetomp3-backend.vercel.app/api/yt2mp3';
 
 const Home = () => {
     const [videoURL, setVideoURL] = useState('');
@@ -16,13 +14,45 @@ const Home = () => {
     const [waitingDownload, setWaitingDownload] = useState(false);
 
     const handleConvert = async () => {
+        //检测输入的URL是否有效，并提取视频ID
         if (!videoURL) {
             alert('Please enter a valid YouTube URL!');
             return;
         }
+
+        let fullVideoUrl = '';
+        let videoId = '';
+        // 首先尝试匹配youtube.com/watch?v=
+        const videoIdMatch = videoURL.match(/youtube\.com\/watch\?v=([^&/?]+)/)
+        if (videoIdMatch && videoIdMatch[1]) {
+            videoId = videoIdMatch[1];
+            fullVideoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        }
+        // 如果匹配失败, 尝试匹配youtu.be
+        if (!videoId) {
+            const youtuBeMatch = videoURL.match(/youtu\.be\/([^&/?]+)/)
+            if (youtuBeMatch && youtuBeMatch[1]) {
+                videoId = youtuBeMatch[1];
+                fullVideoUrl = `https://youtu.be/${videoId}`;
+            }
+        }
+
+        if (!videoId) {// 如果匹配失败, 尝试匹配短视频id
+            const shortIdMatch = videoURL.match(/youtube\.com\/shorts\/([^&/?]+)/)
+            if (shortIdMatch && shortIdMatch[1]) {
+                videoId = shortIdMatch[1];
+                fullVideoUrl = `https://www.youtube.com/shorts/${videoId}`;
+            }
+        }
+
+        if (!videoId) {
+            alert('Please enter a valid YouTube URL!');
+            return;
+        }
+
         setFetchingDownloadUrl(true);
         try {
-            const response = await fetch(`${yt2mp3Url}?vedioUrl=${videoURL}`, {
+            const response = await fetch(`${yt2mp3Url}?vedioUrl=${fullVideoUrl}&videoId=${videoId}`, {
                 method: 'GET'
             });
             if (!response.ok) {
