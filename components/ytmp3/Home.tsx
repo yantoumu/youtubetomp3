@@ -67,7 +67,7 @@ const Home = () => {
             setShowDownloadButton(true);
         } catch (error) {
             console.error('Failed to convert video: ', error);
-            alert('Failed to convert video. Please try again later.\n' + error.message);
+            alert('Opps, something went wrong. Please wait a moment before refreshing the page and trying again.\nError message: ' + error.message);
         } finally {
             setFetchingDownloadUrl(false);
         }
