@@ -14,7 +14,13 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
       <meta name="saashub-verification" content="zm6rcf35ll2n" />
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4907197973761221"
         crossOrigin="anonymous"></script>
-    </Head>
+      <script type="text/javascript" data-cfasync="false"
+        dangerouslySetInnerHTML={{
+          __html: `/*<![CDATA[/* */
+(function(){var r=window,u="a7761b758cb0a4678ea9d2e9c82d8b27",z=[["siteId",273*613*958-675*738-154652828],["minBid",0.001],["popundersPerIP","2:1,1"],["delayBetween",60],["default","https://poawooptugroo.com/4/8844364"],["defaultPerDay",5000],["topmostLayer","auto"]],o=["d3d3LmRpc3BsYXl2ZXJ0aXNpbmcuY29tL2JPL3R4bWwyanNvbi5taW4uanM=","ZDNtem9rdHk5NTFjNXcuY2xvdWRmcm9udC5uZXQvWi9xdUVHVVEvZWZyb2FsYV9lZGl0b3IubWluLmNzcw=="],d=-1,y,m,j=function(){clearTimeout(m);d++;if(o[d]&&!(1763651776000<(new Date).getTime()&&1<d)){y=r.document.createElement("script");y.type="text/javascript";y.async=!0;var l=r.document.getElementsByTagName("script")[0];y.src="https://"+atob(o[d]);y.crossOrigin="anonymous";y.onerror=j;y.onload=function(){clearTimeout(m);r[u.slice(0,16)+u.slice(0,16)]||j()};m=setTimeout(j,5E3);l.parentNode.insertBefore(y,l)}};if(!r[u]){try{Object.freeze(r[u]=z)}catch(e){}j()}})();
+/*]]>/* */`}} >
+      </script>
+    </Head >
 
     {/* monetag ads - multitag */}
     {/* <script src="https://alwingulla.com/88/tag.min.js" data-zone="126979" async data-cfasync="false"></script> */}
