@@ -19,12 +19,12 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
     {/* monetag ads - multitag */}
     {/* <script src="https://alwingulla.com/88/tag.min.js" data-zone="126979" async data-cfasync="false"></script> */}
 
-    {/* monetag ads - OnClick (Popunder) */}
-    <Script>
+    {/* monetag ads - popunder 8833117 */}
+    {/* <Script>
       {`
       (function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://shebudriftaiter.net/tag.min.js',8833117,document.body||document.documentElement)
       `}
-    </Script>
+    </Script> */}
 
 
     {/* monetag ads - Vignette Banner 8833160 */}
