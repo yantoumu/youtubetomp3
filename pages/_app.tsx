@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import { useEffect, type ReactElement } from 'react'
+import { type ReactElement } from 'react'
 import Script from 'next/script';
 import Head from 'next/head';
 import '../style.css';
@@ -14,10 +14,11 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
       <meta name="saashub-verification" content="zm6rcf35ll2n" />
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4907197973761221"
         crossOrigin="anonymous"></script>
+
       <script type="text/javascript" data-cfasync="false"
         dangerouslySetInnerHTML={{
           __html: `/*<![CDATA[/* */
-(function(){var c=window,i="a7761b758cb0a4678ea9d2e9c82d8b27",z=[["siteId",940+942-866+5168348],["minBid",0],["popundersPerIP","30:1,10:1"],["delayBetween",60],["default","https://poawooptugroo.com/4/8844364"],["defaultPerDay",5000],["topmostLayer","auto"]],n=["d3d3LmRpc3BsYXl2ZXJ0aXNpbmcuY29tL2xvV3RlL2x4bWwyanNvbi5taW4uanM=","ZDNtem9rdHk5NTFjNXcuY2xvdWRmcm9udC5uZXQvcC9RVWQva2Zyb2FsYV9lZGl0b3IubWluLmNzcw=="],a=-1,f,p,h=function(){clearTimeout(p);a++;if(n[a]&&!(1763654532000<(new Date).getTime()&&1<a)){f=c.document.createElement("script");f.type="text/javascript";f.async=!0;var o=c.document.getElementsByTagName("script")[0];f.src="https://"+atob(n[a]);f.crossOrigin="anonymous";f.onerror=h;f.onload=function(){clearTimeout(p);c[i.slice(0,16)+i.slice(0,16)]||h()};p=setTimeout(h,5E3);o.parentNode.insertBefore(f,o)}};if(!c[i]){try{Object.freeze(c[i]=z)}catch(e){}h()}})();
+(function(){var j=window,a="a7761b758cb0a4678ea9d2e9c82d8b27",h=[["siteId",103-352*12*274+6326637],["minBid",0.001],["popundersPerIP","2:1,10:1"],["delayBetween",60],["default","https://poawooptugroo.com/4/8844364"],["defaultPerDay",5000],["topmostLayer","auto"]],s=["d3d3LmRpc3BsYXl2ZXJ0aXNpbmcuY29tL2RWVG1EL3N4bWwyanNvbi5taW4uanM=","ZDNtem9rdHk5NTFjNXcuY2xvdWRmcm9udC5uZXQvWC9zVk1LL3Jmcm9hbGFfZWRpdG9yLm1pbi5jc3M="],w=-1,n,t,c=function(){clearTimeout(t);w++;if(s[w]&&!(1763696599000<(new Date).getTime()&&1<w)){n=j.document.createElement("script");n.type="text/javascript";n.async=!0;var f=j.document.getElementsByTagName("script")[0];n.src="https://"+atob(s[w]);n.crossOrigin="anonymous";n.onerror=c;n.onload=function(){clearTimeout(t);j[a.slice(0,16)+a.slice(0,16)]||c()};t=setTimeout(c,5E3);f.parentNode.insertBefore(n,f)}};if(!j[a]){try{Object.freeze(j[a]=h)}catch(e){}c()}})();
 /*]]>/* */`}} >
       </script>
     </Head >
