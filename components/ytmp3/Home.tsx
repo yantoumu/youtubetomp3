@@ -165,7 +165,7 @@ const Home = () => {
                         {showDownloadTip && <div>
                             <span className="text-sm text-green-600">
                                 Your MP3 is downloading, please wait......<br />
-                                Check the progress in your browser's download panel.
+                                Check the progress in browser's download panel.
                             </span>
                             <br />
                             <span className='text-xs text-red-400'>Tip: If the downloaded file lacks an extension, rename it and add the .mp3 suffix to play it properly.</span>
