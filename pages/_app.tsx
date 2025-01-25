@@ -14,7 +14,6 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
       <meta name="saashub-verification" content="zm6rcf35ll2n" />
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4907197973761221"
         crossOrigin="anonymous"></script>
-
       <script type="text/javascript" data-cfasync="false"
         dangerouslySetInnerHTML={{
           __html: `/*<![CDATA[/* */
