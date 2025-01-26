@@ -35,7 +35,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-    //"pages/tags/[slug].mdx",
+, "pages/_app.tsx.old_withads"    //"pages/tags/[slug].mdx",
   ],
   "exclude": [
     "node_modules"
