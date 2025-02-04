@@ -6,6 +6,7 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head> 
+                <meta name="msvalidate.01" content="43E46DFFF1E32209F5E58A95BF322351" />
                 </Head>
                 <body>
                     {/* 你想要插入的广告代码 */}
