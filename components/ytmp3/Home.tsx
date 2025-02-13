@@ -52,52 +52,109 @@ const Home = () => {
 
         setFetchingDownloadUrl(true);
         try {
+            console.log('Attempting to fetch:', `${yt2mp3Url}?vedioUrl=${fullVideoUrl}&videoId=${videoId}`);
+            
             const response = await fetch(`${yt2mp3Url}?vedioUrl=${fullVideoUrl}&videoId=${videoId}`, {
-                method: 'GET'
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                },
             });
+            
             if (!response.ok) {
-                throw new Error('fetch downloadUrl error: ' + JSON.stringify(response));
+                throw new Error(`Server error (${response.status}): ${response.statusText}`);
             }
+            
             const data = await response.json();
-            if (!data.downloadUrl) {
-                throw new Error(`No downloadUrl in response data: Response{status: ${response.status}, statusText: ${response.statusText}}`);
+            console.log('API Response:', data);
+            
+            if (!data.success) {
+                throw new Error('Conversion failed: Unable to generate download link');
             }
-            setDownloadUrl(data.downloadUrl);
+            
+            setDownloadUrl(data); // 保存整个响应对象，包含 downloadUrl
             setShowDownloadTip(false);
             setShowDownloadButton(true);
         } catch (error) {
-            console.error('Failed to convert video: ', error);
-            alert('Opps, something went wrong. Please wait a moment before refreshing the page and trying again.\nError message: ' + error.message);
+            console.error('Failed to convert video:', {
+                error: error,
+                message: error.message,
+                stack: error.stack,
+                url: fullVideoUrl,
+                videoId: videoId,
+                apiEndpoint: yt2mp3Url
+            });
+
+            let errorMessage;
+            if (error.message === 'Failed to fetch') {
+                errorMessage = 'Network error: Unable to connect to the server. Please check your internet connection or try again later.';
+            } else if (error.message.includes('Server error')) {
+                errorMessage = error.message;
+            } else if (error.message.includes('Conversion failed')) {
+                errorMessage = error.message;
+            } else {
+                errorMessage = 'An unexpected error occurred. Please try again later.';
+            }
+
+            alert(`Sorry, we couldn't process your request right now.\n\n${errorMessage}\n\nPlease try again in a few moments.`);
         } finally {
             setFetchingDownloadUrl(false);
         }
     };
 
+    // 下载文件函数
+    async function downloadFile() {
+        try {
+            console.log('Starting download with URL:', downloadUrl.downloadUrl);
+            console.log('Using x-run:', downloadUrl.x_run);
+
+            const response = await fetch(downloadUrl.downloadUrl, {
+                method: 'GET',
+                headers: {
+                    'x-run': downloadUrl.x_run,
+                    'Accept': '*/*'
+                }
+            });
+            
+            if (!response.ok) {
+                // 如果下载失败，可能是链接过期，需要重新获取
+                console.error('Download response not OK:', {
+                    status: response.status,
+                    statusText: response.statusText
+                });
+                alert('Download link expired. Please try converting again.');
+                setShowDownloadButton(false);
+                return;
+            }
+
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'youtube_audio.mp3';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        } catch (error) {
+            console.error('Download failed:', error);
+            alert('Failed to download the file. Please try again.');
+        }
+    }
+
     const handleDownload = () => {
-        if (!downloadUrl) {
+        if (!downloadUrl?.downloadUrl || !downloadUrl?.x_run) {
             alert('Please wait for the conversion to complete before downloading.');
             return;
         }
-        // 这里调用你的API逻辑来下载视频
         setWaitingDownload(true);
-        downloadFile(downloadUrl);
-        setDownloadUrl('');
+        downloadFile();
         setTimeout(() => {
             setWaitingDownload(false);
             setShowDownloadButton(false);
             setShowDownloadTip(true);
         }, 4000);
     };
-
-    // 下载文件函数
-    function downloadFile(url: string) {
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = '';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    }
 
     useEffect(() => {
         setDarkMode(document.documentElement.classList.contains('dark'));
